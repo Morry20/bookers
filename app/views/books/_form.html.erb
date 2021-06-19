@@ -1,0 +1,26 @@
+  <% if @book.errors.any? %>
+    <h2>
+      <%= @book.errors.count %>errors prohibited this book from being saved:
+    </h2>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+      <li>
+        <%= message %>
+      </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
+<%= form_with model:@book, local:true do |f| %>
+
+ <%= f.label :title, 'Title' %><br>
+ <%= f.text_field :title %><br>
+
+ <%= f.label :body, 'Body' %><br>
+
+ <%= f.text_area :body %><br>
+ <%= f.submit  %>
+
+
+<% end %>

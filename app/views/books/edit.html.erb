@@ -1,2 +1,9 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<p id="notice"><%= flash[:success] %></p>
+
+<h1>Editing Book</h1>
+
+<%= render 'books/form' %>
+
+  <%= link_to "Show", book_path(@book) %>
+  |
+  <%= link_to "Back", books_path %>
